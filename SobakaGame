@@ -1,0 +1,47 @@
+#мини-игра собака
+
+class Dog():
+	"""днк собаки"""
+
+	def __init__(self, name, age,):
+		"""инициализация данных"""
+		self.name = name
+		self.age = age
+
+	def sit(self):
+		"""собакен сядет по команде"""
+		print("\n" + self.name + " села по вашей команде")
+
+	def jump(self):
+		"""собакен прыгнет по команде"""
+		print("\n" + self.name + " неохотно встала и робко прыгнула всего на две головы выше")
+
+	def swing(self):
+		"""собакена покрутится несколько раз"""
+		print("\n" + self.name + " покинула зону комфорта и покружилась вокруг себя два раза")
+
+	def age_future(self):
+		"""программа скажет сколько будет псу через 3 года"""
+		dog_age = self.age + 3
+		print("\n" + str(dog_age) + " лет будет твоей собаке")
+
+
+name = input("привет! это приложение где ты можешь поиграть с собакой.\n для начала укажи ее имя: ")
+age = int(input("теперь укажи возраст пса: "))
+
+my_dog = Dog(name, age)
+
+val = 0
+while True:
+	val = int(input("\n какую команду дашь собаке?\n 1 - сидеть\n 2 - прыгнуть\n 3 - покрутиться\n 4 - узнать возраст собаки через 3 года\n"))
+	if val > 4:
+		print("нее, такого нету")
+		continue;
+	elif val == 1:
+		my_dog.sit()
+	elif val == 2:
+		my_dog.jump()
+	elif val == 3:
+		my_dog.swing()
+	elif val == 4:
+		my_dog.age_future()
